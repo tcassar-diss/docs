@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[a4paper, margin=1.35in
+]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{natbib}
+
+\title{Investigating and Implementing Intra-Kernel Security in Unikraft}
+\author{Tom Cassar}
+\date{April 2024}
+
+\begin{document}
+\maketitle
+
+\noindent Unikernels are lightweight single address space machines \cite{unikernel-isolation} which are created by compiling an application with the libraries on which it depends as well as a minimal operating system layer. 
+This creates a lightweight kernel executable which is then generally run on a virtual machine on top of a hypervisor. 
+Unikernels boast both security and performance benefits: fast system calls (which stem from their single address space) \cite{hermitux}, millisecond boot times \cite{unikraft}, a minimal attack surface, and stronger isolation than alternative technologies (such as containers) on systems where multiple unikernels are run \cite{security-perspective}.\\
+
+\noindent Unikernels are compiled missing many security features that come standard on many other operating systems. This partly because unikernels are designed to only run one application, and partly due to a lack of maturity. 
+Michaels and Dilelo reported that ``features like ASLR, \texttt{W\^{}X}, stack canaries, heap integrity checks and more are completely absent or seriously flawed'' \cite{michaels2019assessing}.
+Other papers have argued that the assumption that unikernels can be viewed as a single unit of trust are not suitable for today's cloud security requirements \cite{unikernel-isolation}.\\
+
+\noindent Unikraft \cite{unikraft-paper} is a collection of tools intended to be used to for creating POSIX-compliant operating systems. 
+It is open source, actively under development, and as of today the most mature unikernel \cite{unikraft-coming-age}. 
+This makes Unikraft a good platform to use to research and implement intra-kernel security.\\
+
+\noindent The project being proposed here would look to:
+
+\begin{enumerate}
+    \item Investigate existing intra-kernel security features present in the Unikraft unikernel
+    \item Implement and contribute one or more intra-kernel security features to Unikraft (e.g. ASLR, \texttt{W\^{}X}, enhanced intrusion detection mechanisms, etc). 
+    These features should be chosen such that they solve a problem discovered during the investigation without significantly affecting unikernel performance (as was shown possible with FlexOS) \cite{flexos}
+\end{enumerate}
+
+
+\noindent Rust is a low-level memory safe language created in 2006.
+It is the only language other than C to be used in the Linux kernel \cite{rust-linux}, and recently was mentioned as part of a document released by the NSA \cite{nsa2022memory} discussing software memory safety and ``how a software program manages memory is core to preventing many vulnerabilities and ensuring a program is robust''.
+ Thus, it makes Rust a sensible choice for a development language. However, the exact task is still to be determined, and the nature of the task may influence the choice of language. Unikraft is mostly written in C, but efforts porting to Rust have already started.
+
+
+\bibliographystyle{vancouver}
+\bibliography{ref}
+
+\end{document}
