@@ -31,3 +31,25 @@
 - Report: think about ~T-1month.
     - **Very** detailed outline (para by para) (cannot see the whole project arbitration wise)
 
+### 14/10/2024
+- Look at other avenues
+    - Loop: dynamic analysis for compatability
+     
+- Reproducing what exists never as interesting
+
+- Dynamic mem allocator problem
+    - temporal safety: can leak info between compartments
+    - flexos atm: each compartment gets an allocator
+    - how to make a more secure version: could be very interesting
+    - would be able to merge into uk? or flexos?
+
+- Read Cambridge paper: hard to read
+
+- Top and tail each paper
+
+- Look at confuzz: fuzzing sounds very interesting. Can definitely use if do anything w compartmentalisation
+    - LibFuzzer
+    - Syzkaller
+
+---
+
