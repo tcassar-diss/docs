@@ -31,7 +31,8 @@
 - Report: think about ~T-1month.
     - **Very** detailed outline (para by para) (cannot see the whole project arbitration wise)
 
-### 14/10/2024
+---
+## 14/10/2024
 - Look at other avenues
     - Loop: dynamic analysis for compatability
      
@@ -52,4 +53,8 @@
     - Syzkaller
 
 ---
+## 21/10/2024
+
+### Questions for Pierre
+- Fuzzing for evaluating security? Is it done? Alternatives for a more "robust" approach?
 
