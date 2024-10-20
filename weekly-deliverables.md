@@ -42,4 +42,14 @@ Weekly deliverables start from Week 4 because that is when I decided to start tr
             fmt.Println("Hello, World")
         }
         ```
+
+
+
+## Week 5
+(Given Pierre things that this is useful)
+- [ ] Per-compartment syxscall filtering
+    - [ ] Try to compile a two-compartment application on FlexOS. Compartment A should NOT depend on `execve`, Compartment B should. Figure out how to "compromise" Compartment A and see what happens when `execve` is called.
+    - [ ] Success => 
+    - [ ] How to motivate the "per-compartment" idea: principle of least privilige yes, but is the performance/maintenance overhead worth it for a unikernel which already has a reduced attack surface
+        - Argue towards future scalability: can add compartments without worrying about syscall filter rules
         
